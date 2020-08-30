@@ -1,0 +1,6 @@
+#/bin/sh
+
+id=$(xdo id)
+xdo hide
+("$@" >&1)
+xdo show "$id"

@@ -1,0 +1,14 @@
+#/bin/sh
+
+pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+muted=$(pacmd list-sinks | awk '/muted/ { print $2 }')
+
+case $muted in
+  'yes') message="Muted" 
+  ;;
+  'no') message="Unmuted"
+  ;;
+esac
+
+~/bin/notificationSender $message 6676

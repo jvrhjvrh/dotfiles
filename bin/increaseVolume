@@ -1,0 +1,5 @@
+#/bin/sh
+
+pactl set-sink-volume @DEFAULT_SINK@ $1
+~/bin/notificationSender "Volume:$(~/bin/getDefaultSinkVol)" 6676
+
