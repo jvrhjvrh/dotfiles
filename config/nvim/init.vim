@@ -38,6 +38,9 @@ nnoremap <silent> <C-F> :Files <CR>
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
+"autocomplete confirm enter
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "<CR>"
+
 " Create map to add keys to
 let g:which_key_map =  {}
 " Define a separator
@@ -46,6 +49,9 @@ let g:which_key_sep = '→'
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
+
+"Remove netrw banner
+let g:netrw_banner=0 
 
 " Hide status line
 autocmd! FileType which_key
@@ -56,6 +62,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'        , 'Comment' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer'             , 'Explorer' ]
 let g:which_key_map['f'] = [ ':Files'                           , 'Search files' ]
+let g:which_key_map['F'] = [ ':Rg'                              , 'Search words' ]
 let g:which_key_map['h'] = [ '<C-W>s'                           , 'Split below']
 let g:which_key_map['v'] = [ '<C-W>v'                           , 'Split right']
 let g:which_key_map['d'] = [ ':call ReactGotoDef()'             , 'Go to definition']

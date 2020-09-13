@@ -113,12 +113,19 @@ export PATH="$DENO_INSTALL/bin:/home/jvrh/bin:/home/jvrh/.cargo/bin:$PATH"
 export VISUAL=vim;
 export EDITOR=vim;
 
-source ~/Documents/1.2.135.0/setup-env.sh
 alias anaconda="source ~/anaconda3/bin/activate"
 alias wmonitor="xrandr --output HDMI-1 --auto --primary --right-of eDP-1"
 alias womonitor="xrandr --auto --output eDP-1 --primary"
 alias lolMode="xrandr --output eDP-1 --primary"
 alias vim="nvim"
+
+#git aliases
+alias pull="git pull"
+alias push="git push"
+alias commit="git commit -m"
+alias add.="git add ."
+
+alias tattach="tmux attach -t"
 
 bindkey -s '^f' 'vim $(fzf)\n'
 
