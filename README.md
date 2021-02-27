@@ -11,3 +11,5 @@
 * Using dunst as my notification manager.
 * Using nvim and emacs as my text editors.
 * Using Rofi as my menu.
+* Using evolution as my email.
+* Using pcmanfm and ranger as my file-managers.
