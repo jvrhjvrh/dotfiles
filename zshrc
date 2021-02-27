@@ -108,15 +108,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
 export DENO_INSTALL="/home/jvrh/.deno"
-export PATH="$DENO_INSTALL/bin:/home/jvrh/bin:/home/jvrh/.cargo/bin:$PATH"
-export VISUAL=vim;
-export EDITOR=vim;
+export PATH="$HOME/.gem/ruby/2.7.0/bin:$DENO_INSTALL/bin:/home/jvrh/bin:/home/jvrh/.cargo/bin:/home/jvrh/.emacs.d/bin:$PATH"
+export VISUAL=nvim
+export EDITOR=nvim
 
 alias anaconda="source ~/anaconda3/bin/activate"
-alias wmonitor="xrandr --output HDMI-1 --auto --primary --right-of eDP-1"
-alias womonitor="xrandr --auto --output eDP-1 --primary"
-alias lolMode="xrandr --output eDP-1 --primary"
+alias wmonitor="xrandr --output HDMI1 --auto --primary --right-of eDP1"
+alias womonitor="xrandr --auto --output eDP1 --primary --output HDMI1 --off"
 alias vim="nvim"
 
 #git aliases
@@ -125,9 +126,13 @@ alias push="git push"
 alias commit="git commit -m"
 alias add.="git add ."
 
-alias tattach="tmux attach -t"
+#tmux aliases
+alias mux="tmuxinator"
+alias smux="tmuxinator start"
+alias kmux="tmux kill-session -t"
 
 bindkey -s '^f' 'vim $(fzf)\n'
+bindkey -s '^z' 'fg\n'
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

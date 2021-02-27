@@ -24,6 +24,8 @@ source $HOME/.config/nvim/plugins/plugins.vim
 :set formatoptions-=r
 :set formatoptions-=o
 :set nowrap
+:set splitbelow
+:set splitright
 :retab
 
 :let g:airline_powerline_fonts=1
@@ -38,6 +40,12 @@ nnoremap <silent> <C-F> :Files <CR>
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
+"Easier changing panes
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "autocomplete confirm enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "<CR>"
 
@@ -51,7 +59,7 @@ let g:which_key_sep = '→'
 let g:which_key_use_floating_win = 0
 
 "Remove netrw banner
-let g:netrw_banner=0 
+let g:netrw_banner=0
 
 " Hide status line
 autocmd! FileType which_key

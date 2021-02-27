@@ -73,9 +73,6 @@ else:
         fulltext = FA_LIGHTNING + " " + FA_PLUG + " "
 
     def color(percent):
-        if percent < 10:
-            # exit code 33 will turn background red
-            return "#FFFFFF"
         if percent < 20:
             return "#FF3300"
         if percent < 30:

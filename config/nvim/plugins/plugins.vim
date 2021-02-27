@@ -18,6 +18,7 @@ Plug 'Ivo-Donchev/vim-react-goto-definition'
 Plug 'voldikss/vim-floaterm'
 Plug 'liuchengxu/vim-which-key'
 Plug 'preservim/nerdcommenter'
+Plug 'https://github.com/tpope/vim-surround'
 
 " Initialize plugin system
 call plug#end()
